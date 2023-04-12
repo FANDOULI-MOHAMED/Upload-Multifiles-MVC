@@ -1,0 +1,132 @@
+ <form th:action="@{addconfig}" th:object="${configuration}" method="post" enctype="multipart/form-data" >
+                     <input type="hidden"  th:field="*{id}" >
+                      <div class="row">
+
+                        <div class="form-group col-md-12">
+                          <label for="telephone" class="col-form-label">Telephone</label> <input
+                                type="text" th:field="*{telephone}" class="form-control" id="telephone"
+                                placeholder="telephone" > <span th:if="${#fields.hasErrors('telephone')}"
+                                                               th:errors  ="*{telephone}" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-12">
+                          <label for="whatsapp" class="col-form-label">Whatsapp</label> <input
+                                type="text" th:field="*{whatsapp}" class="form-control" id="whatsapp"
+                                placeholder="whatsapp"> <span th:if="${#fields.hasErrors('whatsapp')}"
+                                                              th:errors="*{whatsapp}" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group col-md-12">
+                          <label for="email" class="col-form-label">Email</label> <input
+                                type="text" th:field="*{email}" class="form-control"
+                                id="email" placeholder="email"> <span
+                                th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
+                                class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group col-md-12">
+                          <label for="fb" class="col-form-label">Facebook</label> <input
+                                type="text" th:field="*{fb}" class="form-control" id="fb"
+                                placeholder="facebook"> <span th:if="${#fields.hasErrors('fb')}"
+                                                              th:errors="*{fb}" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-12">
+                          <label for="insta" class="col-form-label">Instagram</label> <input
+                                type="text" th:field="*{insta}" class="form-control" id="insta"
+                                placeholder="insta"> <span th:if="${#fields.hasErrors('insta')}"
+                                                           th:errors="*{insta}" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group col-md-12">
+                          <label for="github" class="col-form-label">Github</label> <input
+                                type="text" th:field="*{github}" class="form-control" id="github"
+                                placeholder="github"> <span th:if="${#fields.hasErrors('github')}"
+                                                            th:errors="*{github}" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group col-md-12">
+                          <label for="youtube" class="col-form-label">Youtube</label> <input
+                                type="text" th:field="*{youtube}" class="form-control" id="youtube"
+                                placeholder="youtube"> <span th:if="${#fields.hasErrors('youtube')}"
+                                                             th:errors="*{youtube}" class="text-danger"></span>
+                        </div>
+
+
+                        <div class="form-group col-md-12">
+                          <label for="logofront" class="col-form-label">Logofront</label>
+                            <img  th:src="@{'/uploads/' + ${configuration.logofront}}" width="50" height="50" />
+                            <input
+                                type="file"  name="Logofront" multiple  class="form-control" id="logofront"
+                                placeholder="logo front"   >
+                        </div>
+
+                        <div class="form-group col-md-12">
+                          <label for="logoback" class="col-form-label">Logoback</label>
+                            <img  th:src="@{'/uploads/' + ${configuration.logoback}}"  width="50" height="50" />
+                            <input
+                                type="file"   name="Logoback" multiple  class="form-control"
+                                id="logoback" placeholder="logo back"   >
+                        </div>
+
+                        <div class="form-group col-md-12">
+                          <label for="logofooter" class="col-form-label">Logofooter</label>
+                            <img  th:src="@{'/uploads/' + ${configuration.logofooter}}"   width="50" height="50" />
+                            <input
+                                type="file"  name="Logofooter" multiple  class="form-control" id="logofooter"
+                                placeholder="logo footer"   >
+
+                        </div>
+                        <div class="form-group col-md-12">
+                          <label for="favicon" class="col-form-label">Favicon</label>
+                            <img  th:src="@{'/uploads/' + ${configuration.favicon}}"  width="50" height="50" />
+
+                            <input
+                                  type="file"  name="Favicon" multiple  class="form-control" id="favicon"
+                                  placeholder="favicon"   >
+                        </div>
+
+
+
+                        <div class="form-group col-md-12">
+                          <label for="nbrformation" class="col-form-label">Nombre de formation</label> <input
+                                type="number" th:field="*{nbrformation}" class="form-control"
+                                id="nbrformation" placeholder="nombre de formation"> <span
+                                th:if="${#fields.hasErrors('nbrformation')}" th:errors="*{nbrformation}"
+                                class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group col-md-12">
+                          <label for="nbrformateur" class="col-form-label">Nombre de formateur</label> <input
+                                type="number" th:field="*{nbrformateur}" class="form-control" id="nbrformateur"
+                                placeholder="nbrformateur"> <span th:if="${#fields.hasErrors('nbrformateur')}"
+                                                                  th:errors="*{nbrformateur}" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-12">
+                          <label for="membre" class="col-form-label">Membre</label> <input
+                                type="number" th:field="*{membre}" class="form-control" id="membre"
+                                placeholder="membre"> <span th:if="${#fields.hasErrors('membre')}"
+                                                            th:errors="*{membre}" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group col-md-12">
+                          <label for="pays" class="col-form-label">Pays</label> <input
+                                type="text" th:field="*{pays}" class="form-control"
+                                id="pays" placeholder="pays"> <span
+                                th:if="${#fields.hasErrors('pays')}" th:errors="*{pays}"
+                                class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group col-md-12">
+                          <label for="propos" class="col-form-label">A propos de nous </label> <input
+                                type="text" th:field="*{propos}" class="form-control"
+                                id="propos" placeholder="propos" > <span
+                                th:if="${#fields.hasErrors('propos')}" th:errors="*{propos}"
+                                class="text-danger"></span>
+                        </div>
+
+                        <div class="col-md-6">
+                          <input type="submit" class="btn btn-primary" value="Confirmer">
+                        </div>
+
+
+                      </div>
+                    </form>

@@ -1,0 +1,85 @@
+package com.sip.ams.entities;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity
+public class Configuration {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
+
+    @NotBlank(message = "telephone obligatoire")
+    @Column(name = "telephone")
+    private String telephone;
+
+    @NotBlank(message = "whatsapp obligatoire")
+    @Column(name = "whatsapp")
+    private String whatsapp;
+
+    @NotBlank(message = "Email obligatoire")
+    @Column(name = "email")
+    private String email;
+
+    @NotBlank(message = "facebook obligatoire")
+    @Column(name = "fb")
+    private String fb;
+
+    @NotBlank(message = "instagram obligatoire")
+    @Column(name = "insta")
+    private String insta;
+
+    @NotBlank(message = "github obligatoire")
+    @Column(name = "git")
+    private String github;
+
+    @NotBlank(message = "youtube obligatoire")
+    @Column(name = "youtube")
+    private String youtube;
+
+    @NotBlank(message = "logo front obligatoire")
+    @Column(name = "logofront")
+    private String logofront;
+
+
+    @NotBlank(message = "logo back obligatoire")
+    @Column(name = "logoback")
+    private String logoback;
+
+    @NotBlank(message = "logo footer obligatoire")
+    @Column(name = "logofooter")
+    private String logofooter;
+
+    @NotBlank(message = "favicon obligatoire")
+    @Column(name = "favicon")
+    private String favicon;
+
+    @Column(name = "nbrformation")
+    private int nbrformation;
+
+    @Column(name = "nbrformateur")
+    private int nbrformateur;
+
+    @Column(name = "membre")
+    private int membre;
+
+    @NotBlank(message = "pays obligatoire")
+    @Column(name = "pays")
+    private String pays;
+
+    @NotBlank(message = "a propos de nous obligatoire")
+    @Column(name = "propos")
+    private String propos;
+
+}

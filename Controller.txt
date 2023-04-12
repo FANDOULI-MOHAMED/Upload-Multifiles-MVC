@@ -1,0 +1,23 @@
+@GetMapping("addconfig")
+
+    public String showAddconfigurationForm(Model model) {
+
+
+        model.addAttribute("configuration", configService.afficherAjoutConfigForm());
+        return "configuration/formconfiguration";
+
+    }
+
+
+
+    @PostMapping("addconfig")
+    public String addArticle(@Valid Configuration configuration, BindingResult result,
+                             @RequestParam("Logofront")  MultipartFile  Logofront   ,
+                             @RequestParam("Logoback")    MultipartFile  Logoback   ,
+                             @RequestParam("Logofooter")  MultipartFile  Logofooter  ,
+                             @RequestParam("Favicon")      MultipartFile   Favicon    ) {
+
+
+        configService.AjoutConfig(configuration,Logofront,Logoback,Logofooter,Favicon);
+        return "redirect:listconfig";
+    }

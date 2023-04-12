@@ -1,0 +1,38 @@
+@Override
+	public Configuration afficherAjoutConfigForm() {
+		Configuration configuration = new Configuration();// object dont la valeur des attributs par defaut
+
+		return configuration;
+	}
+
+	@Override
+	public void AjoutConfig(Configuration configuration, MultipartFile Logofront, MultipartFile Logoback, MultipartFile Logofooter, MultipartFile Favicon) {
+		/// part upload files
+		//StringBuilder fileName = new StringBuilder();
+		List<String> imagestab = new ArrayList();
+
+		try {
+			for (MultipartFile file : new MultipartFile[]{Logofront, Logoback, Logofooter, Favicon}) {
+				if (file.isEmpty()) {
+					continue; // skip if no file is uploaded
+				}
+				Path fileNameAndPath = Paths.get(uploadDirectory, file.getOriginalFilename());
+				Files.write(fileNameAndPath, file.getBytes());
+				imagestab.add(file.getOriginalFilename());
+
+			}
+			if (!imagestab.isEmpty()) {
+				configuration.setLogofront(imagestab.get(0));
+				configuration.setLogoback(imagestab.get(1));
+				configuration.setLogofooter(imagestab.get(2));
+				configuration.setFavicon(imagestab.get(3));
+			}
+
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		// End Upload files
+
+		configurationRepository.save(configuration);
+	}
