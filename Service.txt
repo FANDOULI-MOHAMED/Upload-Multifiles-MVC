@@ -1,4 +1,4 @@
-https://github.com/FANDOULI-MOHAMED/Upload-Multifiles-MVC.git
+public static String uploadDirectory = System.getProperty("user.dir") + "/src/main/resources/static/uploads";
 
 
 @Override
